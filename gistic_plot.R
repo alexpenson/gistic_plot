@@ -5,7 +5,7 @@ old <- theme_set(theme_minimal(20))
 gistic_plot <- function(scores.gistic = 'scores.gistic'){
   gistic <- fread(scores.gistic)
   ggplot(gistic, aes(x=Start, xend=End, y=`-log10(q-value)`, yend=`-log10(q-value)`, col=Type)) +
-    geom_step() +
+    geom_line() +
     facet_grid(Type~Chromosome,
                scales = "free_x",
                space = "free_x") +
